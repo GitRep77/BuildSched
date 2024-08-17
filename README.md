@@ -150,3 +150,8 @@ This will run the genetic algorithm, generate the optimized schedule, and displa
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+## Author
+
+This project was created and is maintained by [GitRep77](https://github.com/GitRep77/).
