@@ -27,6 +27,48 @@ The final output is an optimized schedule that assigns tasks to workers and mach
 
 ---
 
+## Task and Worker/Machine Information
+
+### 1. Tasks
+Each task has a unique ID, duration (in hours), dependencies (other tasks that need to be completed first), and the required resource (either a worker or machine).
+
+| Task ID | Description           | Duration (Hours) | Dependencies | Required Resource |
+|---------|-----------------------|------------------|--------------|-------------------|
+| T1      | Site Preparation       | 40               | None         | Excavator         |
+| T2      | Foundation Laying      | 60               | T1           | Concrete Mixer    |
+| T3      | Steel Frame Erection   | 100              | T2           | Crane             |
+| T4      | Electrical Wiring      | 50               | T3           | Electrician       |
+| T5      | Plumbing Installation  | 40               | T3           | Plumber           |
+| T6      | Interior Walls         | 80               | T4, T5       | Carpenter         |
+| T7      | Roofing Installation   | 60               | T6           | Roofer            |
+| T8      | Window Installation    | 30               | T6           | Glazier           |
+| T9      | Final Inspections      | 20               | T7, T8       | Inspector         |
+
+### 2. Workers/Machines
+Each worker/machine has a unique ID, skillset, and working hours available per day.
+
+| Worker/Machine ID | Type    | Skillset/Capability | Working Hours (per day) |
+|-------------------|---------|---------------------|-------------------------|
+| W1                | Worker  | Electrician         | 8                       |
+| W2                | Worker  | Plumber             | 8                       |
+| W3                | Worker  | Carpenter           | 8                       |
+| W4                | Worker  | Roofer              | 8                       |
+| W5                | Worker  | Glazier             | 8                       |
+| M1                | Machine | Excavator           | 10                      |
+| M2                | Machine | Concrete Mixer      | 10                      |
+| M3                | Machine | Crane               | 10                      |
+| W6                | Worker  | Inspector           | 6                       |
+
+### 3. Constraints
+We need to consider the following constraints in our genetic algorithm:
+
+1. **Working Hours**: Each worker/machine can only work within their allotted working hours per day.
+2. **Task Dependencies**: Certain tasks need to be completed before others can start. For example, the foundation must be laid before the steel frame can be erected.
+3. **Machine/Worker Availability**: Some tasks require specific machines or skilled workers, which can’t be assigned to other tasks simultaneously.
+4. **Task Duration**: Each task has a specific duration, which needs to be completed within the available working hours of the assigned worker or machine.
+
+---
+
 ## Gantt Chart Visualization
 
 Below is the visual representation of the optimized task schedule.
