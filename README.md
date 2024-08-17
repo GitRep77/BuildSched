@@ -31,7 +31,7 @@ The final output is an optimized schedule that assigns tasks to workers and mach
 
 Below is the visual representation of the optimized task schedule.
 
-![Gantt Chart of Optimized Task Schedule](link_to_gantt_chart_image)
+![Gantt Chart of Optimized Task Schedule](assets/gantt_chart.png)
 
 ---
 
